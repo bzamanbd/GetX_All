@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:snack_bar_getx/appcon.dart';
-
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -10,7 +8,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HomeView'),
+        title: Text('Snackbar'),
         centerTitle: true,
       ),
       body: Center(
@@ -21,6 +19,15 @@ class HomeView extends GetView<HomeController> {
             icon: Icon(Icons.book),
             snackPosition: SnackPosition.BOTTOM,
           ),
+          child: Center(
+              child: Text(
+            'Show Snackbar',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: AppCon.defaultSize / 1.2,
+            ),
+          )),
         ),
       ),
     );

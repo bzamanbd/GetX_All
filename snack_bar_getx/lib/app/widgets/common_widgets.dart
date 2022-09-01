@@ -80,6 +80,7 @@ class CommonWidgets {
     onTap,
     onDoubleTap,
     onLongPress,
+    child,
   }) {
     return InkWell(
       onTap: onTap,
@@ -107,6 +108,7 @@ class CommonWidgets {
                 ]
               : [],
         ),
+        child: child,
       ),
     );
   }

@@ -80,6 +80,9 @@ class CommonWidgets {
     onTap,
     onDoubleTap,
     onLongPress,
+    child,
+    btnText,
+    btnTextColor,
   }) {
     return InkWell(
       onTap: onTap,
@@ -107,6 +110,17 @@ class CommonWidgets {
                 ]
               : [],
         ),
+        child: child ??
+            Center(
+              child: Text(
+                btnText ?? 'Button',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: btnTextColor ?? Colors.white,
+                  fontSize: AppCon.defaultSize / 1.15,
+                ),
+              ),
+            ),
       ),
     );
   }

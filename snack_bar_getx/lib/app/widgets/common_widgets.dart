@@ -13,7 +13,7 @@ class CommonWidgets {
     return Text(
       text,
       style: TextStyle(
-        fontSize: fontsize ??= Get.size.width * 0.1,
+        fontSize: fontsize ??= AppCon.defaultSize * 0.1,
         fontWeight: weight ??= FontWeight.w900,
         color: color ??= Colors.black,
         height: height ??= 1,
@@ -30,7 +30,7 @@ class CommonWidgets {
     return Text(
       text,
       style: TextStyle(
-        fontSize: fontsize ??= Get.size.width * 0.061,
+        fontSize: fontsize ??= AppCon.defaultSize * 0.061,
         fontWeight: weight ??= FontWeight.w400,
         color: color ??= Colors.black54,
         height: height ??= 1,
@@ -50,7 +50,7 @@ class CommonWidgets {
       text,
       textAlign: textAlign ??= TextAlign.justify,
       style: TextStyle(
-        fontSize: fontsize ??= Get.size.width * 0.055,
+        fontSize: fontsize ??= AppCon.defaultSize * 0.055,
         fontWeight: weight ??= FontWeight.w400,
         color: color ??= AppCon.defaultColorTheme.textColor,
         height: height ??= 1.4,
@@ -80,6 +80,7 @@ class CommonWidgets {
     onTap,
     onDoubleTap,
     onLongPress,
+    child,
   }) {
     return InkWell(
       onTap: onTap,
@@ -107,6 +108,7 @@ class CommonWidgets {
                 ]
               : [],
         ),
+        child: child,
       ),
     );
   }

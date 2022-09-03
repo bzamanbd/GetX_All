@@ -19,6 +19,7 @@ class HomeView extends GetView<HomeController> {
           btnText: 'Click Here',
           onTap: () => Get.to(
             SecondPageView(),
+            fullscreenDialog: true,
           ),
         ),
       ),

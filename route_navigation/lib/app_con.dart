@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'app/themes/colors.dart';
 import 'app/themes/text.dart';
 import 'app/widgets/common_widgets.dart';

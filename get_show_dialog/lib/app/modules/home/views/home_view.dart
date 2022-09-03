@@ -16,7 +16,10 @@ class HomeView extends GetView<HomeController> {
         body: Center(
           child: AppCon.commonWidgets.defaultBtn(
             btnText: 'ShowDialog',
-            onTap: () => Get.defaultDialog(),
+            onTap: () => Get.defaultDialog(
+              title: 'Title',
+              middleText: 'This is middleText',
+            ),
           ),
         ));
   }

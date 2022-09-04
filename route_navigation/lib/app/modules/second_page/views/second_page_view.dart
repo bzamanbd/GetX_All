@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:route_navigation/app_con.dart';
-
 import '../controllers/second_page_controller.dart';
 
 class SecondPageView extends GetView<SecondPageController> {
@@ -18,15 +16,24 @@ class SecondPageView extends GetView<SecondPageController> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'SecondPageView is working',
-              style: TextStyle(fontSize: 20),
+            AppCon.commonWidgets.defaultSubTitle(
+              text: 'Second Page',
             ),
             AppCon.commonWidgets.defaultSpacer(),
             AppCon.commonWidgets.defaultBtn(
               btnText: 'Go to Back',
-              onTap: () => Get.back(),
+              onTap: () => Get.back(result: 'data from second page'),
             ),
+            AppCon.commonWidgets.defaultSpacer(
+              width: 0.0,
+            ),
+
+//=========================================================//
+            // AppCon.commonWidgets.defaultText(
+            //   text: '${Get.arguments}',
+            //   color: AppCon.defaultColorTheme.secondaryColor,
+            // ),
+//=========================================================//
           ],
         ),
       ),

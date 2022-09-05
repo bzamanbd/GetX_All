@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:state_manaement_getx/app_con.dart';
 import '../controllers/home_controller.dart';
+import '../elements/elements.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    var elements = Elements();
     return Scaffold(
       appBar: AppBar(
         title: Text('HomeView'),
@@ -17,8 +19,8 @@ class HomeView extends GetView<HomeController> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Obx(() => AppCon.commonWidgets.defaultTitle(
-                text: "$countText",
+          Obx(() => AppCon.commonWidgets.defaultSubTitle(
+                text: "${elements.countText.value}",
                 fontsize: AppCon.defaultSize * 3,
               )),
           AppCon.commonWidgets.defaultSpacer(
@@ -26,15 +28,10 @@ class HomeView extends GetView<HomeController> {
           ),
           AppCon.commonWidgets.defaultBtn(
             btnText: 'ClickMe',
-            onTap: () => incrementer(),
+            onTap: () => elements.incrementer(),
           ),
         ],
       )),
     );
   }
-}
-
-var countText = 0.obs;
-incrementer() {
-  countText++;
 }

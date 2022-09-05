@@ -17,7 +17,7 @@ class HomeView extends GetView<HomeController> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Obx(() => AppCon.commonWidgets.defaultText(
+          Obx(() => AppCon.commonWidgets.defaultTitle(
                 text: "$countText",
                 fontsize: AppCon.defaultSize * 3,
               )),

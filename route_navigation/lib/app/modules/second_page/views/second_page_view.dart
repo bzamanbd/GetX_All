@@ -22,18 +22,21 @@ class SecondPageView extends GetView<SecondPageController> {
             AppCon.commonWidgets.defaultSpacer(),
             AppCon.commonWidgets.defaultBtn(
               btnText: 'Go to Back',
-              onTap: () => Get.back(result: 'data from second page'),
+//================data sending to the backpage====================//
+              // onTap: () => Get.back(result: 'data from second page'),
+
+//===========go to back=================//
+              onTap: () => Get.back(),
             ),
             AppCon.commonWidgets.defaultSpacer(
               width: 0.0,
             ),
 
-//=========================================================//
-            // AppCon.commonWidgets.defaultText(
-            //   text: '${Get.arguments}',
-            //   color: AppCon.defaultColorTheme.secondaryColor,
-            // ),
-//=========================================================//
+//==========receving data from home screen =========================//
+            AppCon.commonWidgets.defaultText(
+              text: "${Get.parameters['fname']} ${Get.parameters['lname']}",
+              color: AppCon.defaultColorTheme.secondaryColor,
+            ),
           ],
         ),
       ),

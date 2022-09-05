@@ -1,10 +1,8 @@
 import 'package:get/get.dart';
-
 import 'package:route_navigation/app/modules/home/bindings/home_binding.dart';
 import 'package:route_navigation/app/modules/home/views/home_view.dart';
 import 'package:route_navigation/app/modules/second_page/bindings/second_page_binding.dart';
 import 'package:route_navigation/app/modules/second_page/views/second_page_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -22,6 +20,9 @@ class AppPages {
       name: _Paths.SECOND_PAGE,
       page: () => SecondPageView(),
       binding: SecondPageBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(milliseconds: 1000),
+      fullscreenDialog: true,
     ),
   ];
 }

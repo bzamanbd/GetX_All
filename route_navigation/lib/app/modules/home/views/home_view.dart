@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:route_navigation/app/modules/second_page/views/second_page_view.dart';
 import 'package:route_navigation/app_con.dart';
 import '../controllers/home_controller.dart';
 
@@ -15,21 +14,21 @@ class HomeView extends GetView<HomeController> {
       body: Center(
         child: AppCon.commonWidgets.defaultBtn(
             btnText: 'Click Here',
-            onTap: () async {
-              // Get.to(
-              //   SecondPageView(),
-              //   fullscreenDialog: true,
-              //   transition: Transition.zoom,
-              //   duration: Duration(milliseconds: 4000),
-              // );
-//====================================================================//
-              //to transfer data from one screen to other by arguments//
+//==========getting data from second-page during comming back time===//
+            // onTap: () async {
+            //   var data = await Get.toNamed(
+            //     "/second-page",
+            // arguments: 'text from home screen',
+            //   );
+            //   print(data);
+            // },
 
-              // Get.to(SecondPageView(), arguments: 'Data from home screen'),
-//========================================================================//
-              var data = await Get.to(SecondPageView());
-              print(data);
-              //here data is comming from second page by 'result' key//
+//==============for never comeback=================//
+            // onTap: () => Get.offNamed('/second-page'),
+
+//=============go to next page with dynamic url==================//
+            onTap: () {
+              Get.toNamed("/second-page?fname=Ripon&lname=Zaman");
             }),
       ),
     );

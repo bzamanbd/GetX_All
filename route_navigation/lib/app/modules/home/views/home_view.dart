@@ -12,24 +12,17 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: AppCon.commonWidgets.defaultBtn(
-            btnText: 'Click Here',
-//==========getting data from second-page during comming back time===//
-            // onTap: () async {
-            //   var data = await Get.toNamed(
-            //     "/second-page",
-            // arguments: 'text from home screen',
-            //   );
-            //   print(data);
-            // },
-
-//==============for never comeback=================//
-            // onTap: () => Get.offNamed('/second-page'),
-
-//=============go to next page with dynamic url==================//
-            onTap: () {
-              Get.toNamed("/second-page?fname=Ripon&lname=Zaman");
-            }),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AppCon.commonWidgets.defaultText(text: 'text'),
+            AppCon.commonWidgets.defaultSpacer(
+              width: 0.0,
+            ),
+            AppCon.commonWidgets.defaultBtn(btnText: 'Click'),
+          ],
+        ),
       ),
     );
   }

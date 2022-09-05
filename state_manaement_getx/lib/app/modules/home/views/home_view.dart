@@ -7,7 +7,9 @@ import '../elements/elements.dart';
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    var elements = Elements();
+    //=======making whole call obserbable====//
+    final elements = Elements(name: 'Ripon', age: 25).obs;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('HomeView'),
@@ -20,15 +22,25 @@ class HomeView extends GetView<HomeController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Obx(() => AppCon.commonWidgets.defaultSubTitle(
-                text: "${elements.countText.value}",
+                // text: elements.value.countText,
+                text: elements.value.name,
                 fontsize: AppCon.defaultSize * 3,
               )),
           AppCon.commonWidgets.defaultSpacer(
             width: 0.0,
           ),
+
+          // AppCon.commonWidgets.defaultBtn(
+          //   btnText: 'ClickMe',
+          //   onTap: () => elements.incrementer(),
+          // ),
+
           AppCon.commonWidgets.defaultBtn(
             btnText: 'ClickMe',
-            onTap: () => elements.incrementer(),
+            onTap: () => elements.update((val) {
+              elements.value.name =
+                  elements.value.name.toString().toLowerCase();
+            }),
           ),
         ],
       )),

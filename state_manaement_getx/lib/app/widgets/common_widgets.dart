@@ -4,12 +4,14 @@ import 'package:get/get.dart';
 import '../../app_con.dart';
 
 class CommonWidgets {
-  defaultTitle(
-      {required String text,
-      Color? color,
-      double? fontsize,
-      FontWeight? weight,
-      double? height}) {
+  defaultTitle({
+    required String text,
+    Color? color,
+    double? fontsize,
+    FontWeight? weight,
+    double? height,
+    child,
+  }) {
     return Text(
       text,
       style: TextStyle(

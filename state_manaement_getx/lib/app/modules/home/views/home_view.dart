@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:state_manaement_getx/app_con.dart';
-
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -12,24 +10,31 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         title: Text('HomeView'),
         centerTitle: true,
+        backgroundColor: AppCon.defaultColorTheme.primaryColor,
       ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          AppCon.commonWidgets.defaultText(
-            text: 'text',
-          ),
+          Obx(() => AppCon.commonWidgets.defaultText(
+                text: "$countText",
+                fontsize: AppCon.defaultSize * 3,
+              )),
           AppCon.commonWidgets.defaultSpacer(
             width: 0.0,
           ),
           AppCon.commonWidgets.defaultBtn(
             btnText: 'ClickMe',
-            onTap: null,
+            onTap: () => incrementer(),
           ),
         ],
       )),
     );
   }
+}
+
+var countText = 0.obs;
+incrementer() {
+  countText++;
 }

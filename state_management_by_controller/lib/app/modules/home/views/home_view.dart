@@ -30,6 +30,9 @@ class HomeView extends GetView<HomeController> {
             Obx(() => AppCon.commonWidgets
                 .defaultSubTitle(text: "${homeController.myName}")),
             AppCon.commonWidgets.defaultSpacer(width: 0.0),
+            AppCon.commonWidgets
+                .defaultSubTitle(text: "${homeController.myName}"),
+            AppCon.commonWidgets.defaultSpacer(width: 0.0),
             AppCon.commonWidgets.defaultBtn(
               btnText: 'changer',
               onTap: () => homeController.caseChanger(),
